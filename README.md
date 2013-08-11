@@ -25,8 +25,8 @@ diverge from the defaults
 * Absolutely no code generation and no requirement for XML configuration
 
 ## Spring Boot CLI
-The Spring Boot CLI is a command line tool that can be used if you want to quickly 
-prototype with Spring. It allows you to run [Groovy](http://groovy.codehaus.org/) scripts, 
+The Spring Boot CLI is a command line tool that can be used if you want to quickly
+prototype with Spring. It allows you to run [Groovy](http://groovy.codehaus.org/) scripts,
 which means that you have a familiar Java-like syntax, without so much boilerplate code.
 
 You don't need to use the CLI to work with Spring Boot but it's definitely the quickest
@@ -38,8 +38,8 @@ way to get a Spring application off the ground.
 ### Installing the CLI
 
 You need [Java SDK v1.6](http://www.java.com) or higher to run the command line tool
-(there are even some issues with the `1.7.0_25` build of openjdk, so stick to earlier 
-builds or use `1.6` for preference). You should check your current Java installation 
+(there are even some issues with the `1.7.0_25` build of openjdk, so stick to earlier
+builds or use `1.6` for preference). You should check your current Java installation
 before you begin:
 
 	$ java -version
@@ -53,18 +53,31 @@ You can download the Spring CLI distribution from the Spring software repository
 Cutting edge [snapshot distributions](http://repo.springsource.org/snapshot/org/springframework/boot/spring-boot-cli/)
 are also available.
 
-Once downloaded, follow the
+Once downloaded, follow the 
 [INSTALL](spring-boot-cli/src/main/content/INSTALL.txt) instructions
 from the unpacked archive. In summary: there is a `spring` script
 (`spring.bat` for Windows) in a `bin/` directory in the `.zip` file,
 or alternatively you can use `java -jar` with the `.jar` file (the
 script helps you to be sure that the classpath is set correctly).
 
+### Installation with GVM
+
+GVM (the Groovy Environment Manager) can be used for managing multiple
+versions of verious Groovy and Java binary packages, including Groovy
+itself and the Spring Boot CLI. Get `gvm` from
+[the gvm home page](http://gvmtool.net) and install Spring Boot with
+
+    $ gvm install springboot
+    $ spring --version
+    Spring Boot v0.5.0.M1
+
 ### OSX Homebrew installation
 If you are on a Mac and using [homebrew](http://brew.sh/), all you need to do to install
 the Spring Boot CLI is:
 
-	$ brew install http://repo.springsource.org/install/spring-boot-cli.rb
+```
+$ brew install http://repo.springsource.org/install/spring-boot-cli.rb
+```
 
 Homebrew will install `spring` to `/usr/local/bin`. Now you can jump right to a
 [quick start example](#quick-start-script-example).
@@ -147,7 +160,7 @@ Create a `pom.xml` to import the appropriate Spring Boot starters:
 	</build>
 
 	<!-- Allow access to Spring milestones and snapshots -->
-	<!-- (you don't need this if you are using the GA release) -->
+	<!-- (you don't need this if you are using anything after 0.5.0.M1) -->
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>
